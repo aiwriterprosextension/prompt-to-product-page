@@ -96,7 +96,11 @@ const AmazonGenerator = () => {
                 Generate SEO-optimized product reviews, buying guides, and marketing content 
                 from Amazon JSON data in seconds using our AI-powered templates.
               </p>
-              <Button size="xl" variant="hero" onClick={() => document.getElementById('generator-tool')?.scrollIntoView({ behavior: 'smooth' })}>
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-primary to-primary-dark text-primary-foreground hover:shadow-xl hover:scale-[1.02] focus:ring-primary px-10 py-5 text-xl"
+                onClick={() => document.getElementById('generator-tool')?.scrollIntoView({ behavior: 'smooth' })}
+              >
                 Start Generating Articles
               </Button>
             </div>
