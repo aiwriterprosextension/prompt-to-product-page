@@ -1,10 +1,8 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { CheckCircle } from 'lucide-react';
-import { Toaster } from 'sonner';
-import { QueryClient } from '@tanstack/react-query';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 import PurchaseButton from '@/components/PurchaseButton';
 
 const Index = () => {
@@ -13,13 +11,19 @@ const Index = () => {
       {/* Navigation */}
       <nav className="bg-white shadow-sm border-b">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-          <a href="/" className="text-lg font-semibold text-gray-900">
+          <Link to="/" className="text-lg font-semibold text-gray-900">
             AMZ Extractor
-          </a>
+          </Link>
           <div className="space-x-4">
-            <Button variant="ghost">Features</Button>
-            <Button variant="ghost">Pricing</Button>
-            <Button variant="ghost">Support</Button>
+            <Button variant="ghost" asChild>
+              <Link to="/features">Features</Link>
+            </Button>
+            <Button variant="ghost" asChild>
+              <Link to="/pricing">Pricing</Link>
+            </Button>
+            <Button variant="ghost" asChild>
+              <Link to="/support">Support</Link>
+            </Button>
           </div>
         </div>
       </nav>
@@ -35,8 +39,8 @@ const Index = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <PurchaseButton />
-            <Button variant="outline" size="lg" className="w-full sm:w-auto">
-              View Features
+            <Button variant="outline" size="lg" className="w-full sm:w-auto" asChild>
+              <Link to="/features">View Features</Link>
             </Button>
           </div>
           <img
@@ -144,9 +148,17 @@ const Index = () => {
 
       {/* Footer */}
       <footer className="bg-gray-900 py-12 text-center">
-        <p className="text-gray-400">
-          &copy; {new Date().getFullYear()} AMZ Extractor. All rights reserved.
-        </p>
+        <div className="max-w-6xl mx-auto px-4">
+          <p className="text-gray-400 mb-4">
+            &copy; {new Date().getFullYear()} AMZ Extractor. All rights reserved.
+          </p>
+          <div className="flex justify-center space-x-6 text-sm text-gray-500">
+            <Link to="/privacy" className="hover:text-gray-300">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-gray-300">Terms of Service</Link>
+            <Link to="/refund" className="hover:text-gray-300">Refund Policy</Link>
+            <Link to="/support" className="hover:text-gray-300">Support</Link>
+          </div>
+        </div>
       </footer>
     </div>
   );
