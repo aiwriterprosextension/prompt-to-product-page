@@ -14,13 +14,186 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      downloads: {
+        Row: {
+          created_at: string | null
+          download_count: number | null
+          download_token: string
+          email: string
+          expires_at: string | null
+          id: string
+          last_downloaded_at: string | null
+          purchase_id: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          download_count?: number | null
+          download_token: string
+          email: string
+          expires_at?: string | null
+          id?: string
+          last_downloaded_at?: string | null
+          purchase_id?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          download_count?: number | null
+          download_token?: string
+          email?: string
+          expires_at?: string | null
+          id?: string
+          last_downloaded_at?: string | null
+          purchase_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "downloads_purchase_id_fkey"
+            columns: ["purchase_id"]
+            isOneToOne: false
+            referencedRelation: "purchases"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      email_logs: {
+        Row: {
+          created_at: string | null
+          email: string
+          error_message: string | null
+          id: string
+          provider: string
+          provider_message_id: string | null
+          purchase_id: string | null
+          status: string
+          type: string
+        }
+        Insert: {
+          created_at?: string | null
+          email: string
+          error_message?: string | null
+          id?: string
+          provider: string
+          provider_message_id?: string | null
+          purchase_id?: string | null
+          status: string
+          type: string
+        }
+        Update: {
+          created_at?: string | null
+          email?: string
+          error_message?: string | null
+          id?: string
+          provider?: string
+          provider_message_id?: string | null
+          purchase_id?: string | null
+          status?: string
+          type?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "email_logs_purchase_id_fkey"
+            columns: ["purchase_id"]
+            isOneToOne: false
+            referencedRelation: "purchases"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      purchases: {
+        Row: {
+          amount: number
+          created_at: string | null
+          customer_name: string | null
+          email: string
+          id: string
+          status: string | null
+          stripe_payment_intent_id: string | null
+          stripe_session_id: string
+          updated_at: string | null
+        }
+        Insert: {
+          amount: number
+          created_at?: string | null
+          customer_name?: string | null
+          email: string
+          id?: string
+          status?: string | null
+          stripe_payment_intent_id?: string | null
+          stripe_session_id: string
+          updated_at?: string | null
+        }
+        Update: {
+          amount?: number
+          created_at?: string | null
+          customer_name?: string | null
+          email?: string
+          id?: string
+          status?: string | null
+          stripe_payment_intent_id?: string | null
+          stripe_session_id?: string
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      support_tickets: {
+        Row: {
+          created_at: string | null
+          email: string
+          id: string
+          message: string
+          purchase_id: string | null
+          status: string | null
+          subject: string
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          email: string
+          id?: string
+          message: string
+          purchase_id?: string | null
+          status?: string | null
+          subject: string
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          email?: string
+          id?: string
+          message?: string
+          purchase_id?: string | null
+          status?: string | null
+          subject?: string
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "support_tickets_purchase_id_fkey"
+            columns: ["purchase_id"]
+            isOneToOne: false
+            referencedRelation: "purchases"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      create_download_token: {
+        Args: { p_email: string; p_purchase_id: string }
+        Returns: string
+      }
+      validate_download_token: {
+        Args: { p_token: string }
+        Returns: {
+          download_count: number
+          email: string
+          expires_at: string
+          is_valid: boolean
+        }[]
+      }
     }
     Enums: {
       [_ in never]: never

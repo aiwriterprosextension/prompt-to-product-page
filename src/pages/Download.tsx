@@ -1,257 +1,205 @@
 
-import React, { useState } from 'react';
-import { Download, CheckCircle, AlertCircle, Play, FileText, HelpCircle, ArrowLeft } from 'lucide-react';
-import Button from '../components/Button';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Download as DownloadIcon, CheckCircle, AlertCircle, Chrome, Monitor } from 'lucide-react';
+import { supabase } from '@/integrations/supabase/client';
+import { toast } from 'sonner';
 
-const DownloadPage = () => {
-  const [isDownloading, setIsDownloading] = useState(false);
+const Download = () => {
+  const { token } = useParams();
+  const navigate = useNavigate();
+  const [isValid, setIsValid] = useState<boolean | null>(null);
+  const [downloading, setDownloading] = useState(false);
+  const [downloadInfo, setDownloadInfo] = useState<any>(null);
 
-  const handleDownload = () => {
-    setIsDownloading(true);
-    // Simulate download
-    setTimeout(() => {
-      setIsDownloading(false);
-    }, 2000);
+  useEffect(() => {
+    if (token) {
+      validateToken();
+    } else {
+      setIsValid(false);
+    }
+  }, [token]);
+
+  const validateToken = async () => {
+    try {
+      const { data, error } = await supabase
+        .rpc('validate_download_token', { p_token: token });
+
+      if (error || !data?.[0]?.is_valid) {
+        setIsValid(false);
+        return;
+      }
+
+      setIsValid(true);
+      setDownloadInfo(data[0]);
+    } catch (error) {
+      console.error('Token validation error:', error);
+      setIsValid(false);
+    }
   };
 
-  return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b border-border bg-background">
-        <div className="container-custom py-4">
-          <div className="flex items-center justify-between">
-            <Link to="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-primary to-primary-dark rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">AI</span>
-              </div>
-              <span className="text-xl font-bold gradient-text">AI Writer Pros</span>
-            </Link>
-            <Link to="/success" className="flex items-center text-muted-foreground hover:text-foreground">
-              <ArrowLeft className="w-4 h-4 mr-1" />
-              Back to Success
-            </Link>
-          </div>
-        </div>
-      </header>
+  const handleDownload = async () => {
+    if (!token) return;
+    
+    setDownloading(true);
+    
+    try {
+      const { data, error } = await supabase.functions.invoke('download-file', {
+        body: { token }
+      });
 
-      <section className="section-padding">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            {/* Hero Section */}
-            <div className="text-center mb-16">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Download <span className="gradient-text">AI Writer Pros</span>
-              </h1>
-              <p className="text-xl text-muted-foreground mb-8">
-                Get your Chrome extension and start extracting Amazon product data in minutes
-              </p>
-              
-              {/* Download Button */}
-              <div className="gradient-card rounded-xl p-8 mb-8 inline-block">
+      if (error) {
+        throw error;
+      }
+
+      toast.success('Download started! Check your downloads folder.');
+      
+      // In a real implementation, this would trigger the actual file download
+      console.log('Download response:', data);
+      
+    } catch (error) {
+      console.error('Download error:', error);
+      toast.error('Download failed. Please contact support.');
+    } finally {
+      setDownloading(false);
+    }
+  };
+
+  if (isValid === null) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#FF9900]"></div>
+      </div>
+    );
+  }
+
+  if (isValid === false) {
+    return (
+      <div className="min-h-screen flex items-center justify-center p-4">
+        <Card className="w-full max-w-md">
+          <CardHeader className="text-center">
+            <AlertCircle className="w-12 h-12 text-red-500 mx-auto mb-4" />
+            <CardTitle className="text-red-600">Invalid Download Link</CardTitle>
+          </CardHeader>
+          <CardContent className="text-center">
+            <p className="text-gray-600 mb-6">
+              This download link is invalid or has expired. Download links are valid for 30 days after purchase.
+            </p>
+            <Button onClick={() => navigate('/')} variant="outline">
+              Return Home
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white p-4">
+      <div className="max-w-4xl mx-auto py-8">
+        <div className="text-center mb-8">
+          <div className="w-16 h-16 bg-[#FF9900] rounded-full flex items-center justify-center mx-auto mb-4">
+            <CheckCircle className="w-8 h-8 text-white" />
+          </div>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">
+            AMZ Extractor Ready to Download
+          </h1>
+          <p className="text-gray-600">
+            Your Amazon data extraction tool is ready for installation
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center">
+                <DownloadIcon className="w-6 h-6 mr-2 text-[#FF9900]" />
+                Download AMZ Extractor
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div className="bg-blue-50 p-4 rounded-lg">
+                  <h3 className="font-semibold text-blue-900 mb-2">Download Information</h3>
+                  <ul className="text-sm text-blue-800 space-y-1">
+                    <li>• File: amz-extractor.zip</li>
+                    <li>• Size: ~2.5 MB</li>
+                    <li>• Downloads: {downloadInfo?.download_count || 0}</li>
+                    <li>• Expires: {downloadInfo?.expires_at ? new Date(downloadInfo.expires_at).toLocaleDateString() : 'N/A'}</li>
+                  </ul>
+                </div>
+                
                 <Button 
-                  variant="hero" 
-                  size="xl" 
                   onClick={handleDownload}
-                  disabled={isDownloading}
-                  className="mb-4"
+                  disabled={downloading}
+                  className="w-full bg-[#FF9900] hover:bg-[#e6890f] text-white"
+                  size="lg"
                 >
-                  {isDownloading ? (
+                  {downloading ? (
                     <>
-                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                      Preparing Download...
+                      <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin mr-2" />
+                      Downloading...
                     </>
                   ) : (
                     <>
-                      <Download className="w-5 h-5 mr-2" />
-                      Download AI Writer Pros Extension
+                      <DownloadIcon className="w-5 h-5 mr-2" />
+                      Download Now
                     </>
                   )}
                 </Button>
-                <p className="text-sm text-muted-foreground">
-                  Version 1.0.0 • Compatible with Chrome 88+ • 2.4 MB
-                </p>
               </div>
-            </div>
+            </CardContent>
+          </Card>
 
-            {/* Installation Guide */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-              <div>
-                <h2 className="text-2xl font-bold mb-6">📥 Installation Guide</h2>
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
-                      1
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-2">Download the Extension</h3>
-                      <p className="text-muted-foreground text-sm">Click the download button above to get the .crx file.</p>
-                    </div>
-                  </div>
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center">
+                <Monitor className="w-6 h-6 mr-2 text-blue-600" />
+                Installation Instructions
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-semibold mb-3 flex items-center">
+                    <Chrome className="w-5 h-5 mr-2" />
+                    For Chrome & Edge:
+                  </h3>
+                  <ol className="text-sm space-y-2 text-gray-600">
+                    <li>1. Extract the downloaded ZIP file</li>
+                    <li>2. Open Chrome/Edge → Menu → Extensions</li>
+                    <li>3. Enable "Developer Mode" (toggle in top-right)</li>
+                    <li>4. Click "Load Unpacked" and select extracted folder</li>
+                    <li>5. Pin AMZ Extractor to your toolbar</li>
+                  </ol>
+                </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
-                      2
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-2">Open Chrome Extensions</h3>
-                      <p className="text-muted-foreground text-sm">Go to chrome://extensions/ or Menu → More Tools → Extensions</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
-                      3
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-2">Enable Developer Mode</h3>
-                      <p className="text-muted-foreground text-sm">Toggle the "Developer mode" switch in the top right corner.</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
-                      4
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-2">Drag & Drop</h3>
-                      <p className="text-muted-foreground text-sm">Drag the downloaded .crx file into the Extensions page.</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 bg-success rounded-full flex items-center justify-center text-white flex-shrink-0">
-                      <CheckCircle className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-2">You're Ready!</h3>
-                      <p className="text-muted-foreground text-sm">Visit any Amazon product page and click the extension icon.</p>
-                    </div>
-                  </div>
+                <div className="bg-green-50 p-4 rounded-lg">
+                  <h4 className="font-semibold text-green-900 mb-2">✅ Compatible With:</h4>
+                  <ul className="text-sm text-green-800 space-y-1">
+                    <li>• Google Chrome</li>
+                    <li>• Microsoft Edge</li>
+                    <li>• All Amazon marketplaces</li>
+                  </ul>
                 </div>
               </div>
-
-              {/* Video Tutorial Placeholder */}
-              <div>
-                <h2 className="text-2xl font-bold mb-6">🎥 Video Tutorial</h2>
-                <div className="gradient-card rounded-xl p-8 text-center">
-                  <div className="w-full h-64 bg-muted rounded-lg flex items-center justify-center mb-4">
-                    <Play className="w-16 h-16 text-muted-foreground" />
-                  </div>
-                  <h3 className="font-semibold mb-2">Installation Walkthrough</h3>
-                  <p className="text-muted-foreground text-sm mb-4">
-                    Watch our step-by-step video guide for installing and using AI Writer Pros
-                  </p>
-                  <Button variant="outline">
-                    <Play className="w-4 h-4 mr-2" />
-                    Watch Tutorial
-                  </Button>
-                </div>
-              </div>
-            </div>
-
-            {/* Browser Compatibility */}
-            <div className="gradient-card rounded-xl p-8 mb-12">
-              <h2 className="text-2xl font-bold mb-6">🌐 Browser Compatibility</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-success rounded-full flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="font-semibold mb-2">Google Chrome</h3>
-                  <p className="text-muted-foreground text-sm">Version 88 and above</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-success rounded-full flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="font-semibold mb-2">Microsoft Edge</h3>
-                  <p className="text-muted-foreground text-sm">Chromium-based versions</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-success rounded-full flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="font-semibold mb-2">Brave Browser</h3>
-                  <p className="text-muted-foreground text-sm">Latest versions</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Troubleshooting */}
-            <div className="mb-12">
-              <h2 className="text-2xl font-bold mb-6">🔧 Troubleshooting</h2>
-              <div className="space-y-4">
-                <div className="gradient-card rounded-lg p-6">
-                  <div className="flex items-start gap-4">
-                    <AlertCircle className="w-6 h-6 text-warning flex-shrink-0 mt-1" />
-                    <div>
-                      <h3 className="font-semibold mb-2">Extension won't install</h3>
-                      <p className="text-muted-foreground text-sm">Make sure Developer mode is enabled and try dragging the file directly into the extensions page.</p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="gradient-card rounded-lg p-6">
-                  <div className="flex items-start gap-4">
-                    <AlertCircle className="w-6 h-6 text-warning flex-shrink-0 mt-1" />
-                    <div>
-                      <h3 className="font-semibold mb-2">Extension icon not showing</h3>
-                      <p className="text-muted-foreground text-sm">Click the puzzle piece icon in Chrome toolbar and pin AI Writer Pros for easy access.</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="gradient-card rounded-lg p-6">
-                  <div className="flex items-start gap-4">
-                    <AlertCircle className="w-6 h-6 text-warning flex-shrink-0 mt-1" />
-                    <div>
-                      <h3 className="font-semibold mb-2">Not working on Amazon</h3>
-                      <p className="text-muted-foreground text-sm">Refresh the Amazon page and make sure you're on a product details page (not search results).</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Additional Resources */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-              <Link to="/documentation" className="gradient-card rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
-                <FileText className="w-8 h-8 text-primary mx-auto mb-4" />
-                <h3 className="font-semibold mb-2">Documentation</h3>
-                <p className="text-muted-foreground text-sm">Complete user guide and API reference</p>
-              </Link>
-
-              <Link to="/support" className="gradient-card rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
-                <HelpCircle className="w-8 h-8 text-primary mx-auto mb-4" />
-                <h3 className="font-semibold mb-2">Get Support</h3>
-                <p className="text-muted-foreground text-sm">Contact our support team for help</p>
-              </Link>
-
-              <div className="gradient-card rounded-xl p-6 text-center">
-                <CheckCircle className="w-8 h-8 text-success mx-auto mb-4" />
-                <h3 className="font-semibold mb-2">Getting Started</h3>
-                <p className="text-muted-foreground text-sm">Quick start guide and best practices</p>
-              </div>
-            </div>
-
-            {/* Support Contact */}
-            <div className="text-center bg-muted/30 rounded-xl p-8">
-              <h2 className="text-xl font-bold mb-4">Need Additional Help?</h2>
-              <p className="text-muted-foreground mb-6">
-                Our support team is ready to help you get up and running with AI Writer Pros.
-              </p>
-              <Link to="/support">
-                <Button variant="primary">
-                  Contact Support
-                </Button>
-              </Link>
-            </div>
-          </div>
+            </CardContent>
+          </Card>
         </div>
-      </section>
+
+        <div className="mt-8 text-center">
+          <p className="text-gray-600 mb-4">
+            Need help? Contact our support team at{' '}
+            <a href="mailto:support@aiwriterpros.com" className="text-[#FF9900] hover:underline">
+              support@aiwriterpros.com
+            </a>
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
 
-export default DownloadPage;
+export default Download;
