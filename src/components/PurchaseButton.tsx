@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { ShoppingCart, Loader2 } from 'lucide-react';
+import { ArrowRight, Loader2 } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 
@@ -47,8 +47,7 @@ const PurchaseButton = () => {
         </>
       ) : (
         <>
-          <ShoppingCart className="w-5 h-5 mr-2" />
-          Get AMZ Extractor – $27
+          Install AMZ Extractor Now <ArrowRight className="w-5 h-5 ml-2" />
         </>
       )}
     </Button>

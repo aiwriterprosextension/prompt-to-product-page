@@ -1,29 +1,35 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle, Zap, Download, Globe, Target, Users, FileText, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PurchaseButton from '@/components/PurchaseButton';
+import SocialProofNotifications from '@/components/SocialProofNotifications';
+import DarkModeToggle from '@/components/DarkModeToggle';
+import CountdownTimer from '@/components/CountdownTimer';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
+      <SocialProofNotifications />
+      
       {/* Navigation */}
-      <nav className="bg-white shadow-sm border-b">
+      <nav className="bg-white dark:bg-gray-900 shadow-sm border-b border-gray-200 dark:border-gray-700 transition-colors duration-300">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-          <Link to="/" className="text-lg font-semibold text-gray-900">
+          <Link to="/" className="text-lg font-semibold text-gray-900 dark:text-white">
             AMZ Extractor
           </Link>
-          <div className="space-x-4">
+          <div className="flex items-center space-x-4">
             <Button variant="ghost" asChild>
-              <Link to="/features">Features</Link>
+              <Link to="/features" className="dark:text-gray-300 dark:hover:text-white">Features</Link>
             </Button>
             <Button variant="ghost" asChild>
-              <Link to="/pricing">Pricing</Link>
+              <Link to="/pricing" className="dark:text-gray-300 dark:hover:text-white">Pricing</Link>
             </Button>
             <Button variant="ghost" asChild>
-              <Link to="/support">Support</Link>
+              <Link to="/support" className="dark:text-gray-300 dark:hover:text-white">Support</Link>
             </Button>
+            <DarkModeToggle />
           </div>
         </div>
       </nav>
@@ -31,18 +37,25 @@ const Index = () => {
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">
+          <h1 className="text-5xl font-bold text-gray-900 dark:text-white mb-6">
             Extract Amazon Product Data in Seconds
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            AMZ Extractor makes it easy for affiliate marketers to pull product details instantly on Chrome & Edge.
+          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-4xl mx-auto">
+            Stop wasting hours on manual research. AMZ Extractor pulls product info, images, and affiliate links in one click—across 18+ marketplaces.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <PurchaseButton />
-            <Button variant="outline" size="lg" className="w-full sm:w-auto" asChild>
+            <Button size="lg" className="w-full sm:w-auto bg-[#FF9900] hover:bg-[#e6890f] text-white font-bold py-4 px-8 text-lg" asChild>
+              <Link to="/pricing">
+                Install AMZ Extractor Now <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
+            </Button>
+            <Button variant="outline" size="lg" className="w-full sm:w-auto dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-800" asChild>
               <Link to="/features">View Features</Link>
             </Button>
           </div>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mb-8">
+            No signup required. Start extracting in seconds.
+          </p>
           <img
             src="/amz-extractor-preview.png"
             alt="AMZ Extractor in action"
@@ -51,95 +64,155 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Problem/Solution Section */}
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-red-600 mb-4">The Problem</h2>
-              <p className="text-lg text-gray-700">
-                Tired of manually copying product details from Amazon for your affiliate content? 
-                Spending hours gathering data that could be extracted in seconds?
+      {/* Benefits Section */}
+      <section className="py-16 px-4 bg-gray-50 dark:bg-gray-800/50 transition-colors duration-300">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-12">Key Benefits</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-md border dark:border-gray-700">
+              <Zap className="w-12 h-12 text-[#FF9900] mb-4 mx-auto" />
+              <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-3">🚀 Bulk Extract 5–100 Products</h3>
+              <p className="text-gray-700 dark:text-gray-300">
+                Process multiple products simultaneously. Extract entire category pages or search results in one go.
               </p>
             </div>
-            <div>
-              <h2 className="text-3xl font-bold text-green-600 mb-4">The Solution</h2>
-              <p className="text-lg text-gray-700">
-                AMZ Extractor automates everything – one-click extraction of all the data you need for high-converting articles.
+            <div className="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-md border dark:border-gray-700">
+              <Target className="w-12 h-12 text-[#FF9900] mb-4 mx-auto" />
+              <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-3">⚡ Auto-Generate Affiliate Links</h3>
+              <p className="text-gray-700 dark:text-gray-300">
+                Automatically converts product URLs to your affiliate links. Compatible with Amazon Associates program.
+              </p>
+            </div>
+            <div className="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-md border dark:border-gray-700">
+              <FileText className="w-12 h-12 text-[#FF9900] mb-4 mx-auto" />
+              <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-3">📊 Export to CSV, Excel, JSON</h3>
+              <p className="text-gray-700 dark:text-gray-300">
+                Export your data in multiple formats for easy integration with your content workflow and tools.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-12">Key Features</h2>
+      {/* Target Audience Section */}
+      <section className="py-16 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-8">Who It's For</h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-6 bg-white rounded-2xl shadow-md">
-              <h3 className="text-xl font-semibold text-blue-600 mb-3">Instant Data Extraction</h3>
-              <p className="text-gray-700">
-                Extract product titles, prices, images, descriptions, and more with a single click.
-              </p>
+            <div className="p-6">
+              <Users className="w-16 h-16 text-[#FF9900] mb-4 mx-auto" />
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Affiliate Marketers</h3>
+              <p className="text-gray-600 dark:text-gray-300">Build high-converting product comparison pages faster</p>
             </div>
-            <div className="p-6 bg-white rounded-2xl shadow-md">
-              <h3 className="text-xl font-semibold text-blue-600 mb-3">Chrome & Edge Support</h3>
-              <p className="text-gray-700">
-                Seamlessly integrates with both Google Chrome and Microsoft Edge browsers.
-              </p>
+            <div className="p-6">
+              <FileText className="w-16 h-16 text-[#FF9900] mb-4 mx-auto" />
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Content Creators</h3>
+              <p className="text-gray-600 dark:text-gray-300">Create product reviews and buying guides with accurate data</p>
             </div>
-            <div className="p-6 bg-white rounded-2xl shadow-md">
-              <h3 className="text-xl font-semibold text-blue-600 mb-3">Universal Amazon Support</h3>
-              <p className="text-gray-700">
-                Works on all major Amazon marketplaces (.com, .ca, .co.uk, .de, .fr, etc.).
-              </p>
+            <div className="p-6">
+              <Globe className="w-16 h-16 text-[#FF9900] mb-4 mx-auto" />
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Ecom Sellers</h3>
+              <p className="text-gray-600 dark:text-gray-300">Research competitor products and pricing strategies</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="py-16 px-4 bg-gray-50 dark:bg-gray-800/50 transition-colors duration-300">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-12">How It Works</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-[#FF9900] text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                1
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Install the Extension</h3>
+              <p className="text-gray-600 dark:text-gray-300">Download and install AMZ Extractor on Chrome or Edge</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-[#FF9900] text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                2
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Navigate to Any Amazon Page</h3>
+              <p className="text-gray-600 dark:text-gray-300">Visit any product page or search results on Amazon</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-[#FF9900] text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                3
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Click "Extract"</h3>
+              <p className="text-gray-600 dark:text-gray-300">Click the extension icon and watch the magic happen</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Proof Section */}
+      <section className="py-16 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border dark:border-gray-700">
+            <blockquote className="text-2xl font-medium text-gray-900 dark:text-white mb-6">
+              "I built 10 affiliate posts in one weekend using AMZ Extractor. It's a game-changer."
+            </blockquote>
+            <cite className="text-gray-600 dark:text-gray-400">— Nina, niche site builder</cite>
+          </div>
+          <p className="text-lg text-gray-600 dark:text-gray-300 mt-8 font-medium">
+            Used by 10,000+ creators, marketers, and sellers worldwide
+          </p>
         </div>
       </section>
 
       {/* Pricing Section */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800/50 transition-colors duration-300">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Simple, One-Time Pricing</h2>
-          <div className="bg-white rounded-2xl shadow-xl p-8 max-w-md mx-auto">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Launch Offer - 50% Off for Early Adopters</h2>
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 max-w-md mx-auto border dark:border-gray-700">
             <div className="text-center mb-6">
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">AMZ Extractor</h3>
-              <div className="text-5xl font-bold text-[#FF9900] mb-2">$27</div>
-              <p className="text-gray-600">One-time payment, lifetime access</p>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">AMZ Extractor</h3>
+              <div className="flex items-center justify-center gap-3 mb-2">
+                <span className="text-2xl text-gray-500 dark:text-gray-400 line-through">$39</span>
+                <span className="text-5xl font-bold text-[#FF9900]">$19</span>
+              </div>
+              <p className="text-gray-600 dark:text-gray-400">Lifetime access</p>
             </div>
             
-            <ul className="text-left space-y-3 mb-8">
+            <ul className="text-left space-y-3 mb-6">
               <li className="flex items-center">
                 <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                Compatible with Chrome & Microsoft Edge
+                <span className="dark:text-gray-300">Compatible with Chrome & Microsoft Edge</span>
               </li>
               <li className="flex items-center">
                 <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                Universal Amazon marketplace support
+                <span className="dark:text-gray-300">Universal Amazon marketplace support</span>
               </li>
               <li className="flex items-center">
                 <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                Complete data extraction (titles, prices, images, reviews)
+                <span className="dark:text-gray-300">Complete data extraction (titles, prices, images, reviews)</span>
               </li>
               <li className="flex items-center">
                 <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                Multiple export formats (JSON/CSV)
+                <span className="dark:text-gray-300">Multiple export formats (JSON/CSV)</span>
               </li>
               <li className="flex items-center">
                 <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                30-day money-back guarantee
+                <span className="dark:text-gray-300">30-day money-back guarantee</span>
               </li>
               <li className="flex items-center">
                 <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                Email support included
+                <span className="dark:text-gray-300">Email support included</span>
               </li>
             </ul>
             
-            <PurchaseButton />
+            <Button className="w-full bg-[#FF9900] hover:bg-[#e6890f] text-white font-bold py-4 px-8 text-lg mb-4" asChild>
+              <Link to="/pricing">
+                Install AMZ Extractor Now <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
+            </Button>
             
-            <p className="text-sm text-gray-500 mt-4">
+            <CountdownTimer />
+            
+            <p className="text-sm text-gray-500 dark:text-gray-400 mt-4">
               Secure payment processed by Stripe
             </p>
           </div>
@@ -147,7 +220,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 py-12 text-center">
+      <footer className="bg-gray-900 dark:bg-black py-12 text-center transition-colors duration-300">
         <div className="max-w-6xl mx-auto px-4">
           <p className="text-gray-400 mb-4">
             &copy; {new Date().getFullYear()} AMZ Extractor. All rights reserved.
