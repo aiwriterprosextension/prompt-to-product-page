@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { CheckCircle, Zap, Download, Globe, Target, Users, FileText, ArrowRight } from 'lucide-react';
@@ -7,6 +6,8 @@ import PurchaseButton from '@/components/PurchaseButton';
 import SocialProofNotifications from '@/components/SocialProofNotifications';
 import DarkModeToggle from '@/components/DarkModeToggle';
 import CountdownTimer from '@/components/CountdownTimer';
+import TestimonialsSection from '@/components/TestimonialsSection';
+import ExtensionPreview from '@/components/ExtensionPreview';
 
 const Index = () => {
   return (
@@ -20,6 +21,9 @@ const Index = () => {
             AMZ Extractor
           </Link>
           <div className="flex items-center space-x-4">
+            <Button variant="ghost" asChild>
+              <Link to="/" className="dark:text-gray-300 dark:hover:text-white">Home</Link>
+            </Button>
             <Button variant="ghost" asChild>
               <Link to="/features" className="dark:text-gray-300 dark:hover:text-white">Features</Link>
             </Button>
@@ -56,13 +60,11 @@ const Index = () => {
           <p className="text-sm text-gray-500 dark:text-gray-400 mb-8">
             No signup required. Start extracting in seconds.
           </p>
-          <img
-            src="/amz-extractor-preview.png"
-            alt="AMZ Extractor in action"
-            className="rounded-2xl shadow-lg max-w-full mx-auto"
-          />
         </div>
       </section>
+
+      {/* Extension Preview */}
+      <ExtensionPreview />
 
       {/* Benefits Section */}
       <section className="py-16 px-4 bg-gray-50 dark:bg-gray-800/50 transition-colors duration-300">
@@ -149,19 +151,7 @@ const Index = () => {
       </section>
 
       {/* Social Proof Section */}
-      <section className="py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border dark:border-gray-700">
-            <blockquote className="text-2xl font-medium text-gray-900 dark:text-white mb-6">
-              "I built 10 affiliate posts in one weekend using AMZ Extractor. It's a game-changer."
-            </blockquote>
-            <cite className="text-gray-600 dark:text-gray-400">— Nina, niche site builder</cite>
-          </div>
-          <p className="text-lg text-gray-600 dark:text-gray-300 mt-8 font-medium">
-            Used by 10,000+ creators, marketers, and sellers worldwide
-          </p>
-        </div>
-      </section>
+      <TestimonialsSection />
 
       {/* Pricing Section */}
       <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800/50 transition-colors duration-300">
