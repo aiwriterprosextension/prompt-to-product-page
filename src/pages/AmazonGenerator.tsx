@@ -49,11 +49,11 @@ const AmazonGenerator = () => {
   return (
     <>
       <Helmet>
-        <title>Amazon Product Article Generator - AI Writer Pros | Create SEO Articles from Amazon Data</title>
+        <title>Amazon Product Article Generator - AMZ Extractor | Create SEO Articles from Amazon Data</title>
         <meta name="description" content="Transform Amazon product JSON data into high-converting, SEO-optimized articles. Generate product reviews, buying guides, and marketing content automatically." />
         <meta name="keywords" content="amazon article generator, product review generator, amazon affiliate articles, SEO content generator, amazon scraper extension" />
         
-        <meta property="og:title" content="Amazon Product Article Generator - AI Writer Pros" />
+        <meta property="og:title" content="Amazon Product Article Generator - AMZ Extractor" />
         <meta property="og:description" content="Transform Amazon product data into SEO-optimized articles instantly" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://aiwriterpros.com/amazon-generator" />

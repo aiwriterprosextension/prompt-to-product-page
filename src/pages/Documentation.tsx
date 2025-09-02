@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { Book, Download, Play, ChevronRight, ArrowLeft, Search, ExternalLink } from 'lucide-react';
 import Button from '../components/Button';
-import { Link                    <h2 className="text-2xl font-bold mb-4 text-foreground">What is AMZ Extractor?</h2>
+import { Link                       <h2 className="text-2xl font-bold mb-4 text-foreground">What is AMZ Extractor?</h2>
+                    <div className="gradient-card rounded-xl p-6">
+                        <p className="text-muted-foreground mb-4">
+                        AMZ Extractor is a powerful Chrome extension designed to extract comprehensive product data from Amazon pages. Built for content creators, affiliate marketers, and researchers, it transforms how you gather and utilize Amazon product information.             <h2 className="text-2xl font-bold mb-4 text-foreground">What is AMZ Extractor?</h2>
                     <div className="gradient-card rounded-xl p-6">
                         <p className="text-muted-foreground mb-4">
                         AMZ Extractor is a powerful Chrome extension designed to extract comprehensive product data from Amazon pages. Built for content creators, affiliate marketers, and researchers, it transforms how you gather and utilize Amazon product information.rom 'react-router-dom';
