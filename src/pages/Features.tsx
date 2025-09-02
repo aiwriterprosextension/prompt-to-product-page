@@ -2,31 +2,37 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { CheckCircle, Download, Globe, Zap, Shield, Clock, Chrome, Monitor, FileText } from 'lucide-react';
-import PurchaseButton from '@/components/PurchaseButton';
+import { CheckCircle, Zap, Download, Globe, Target, Users, FileText, ArrowRight, Chrome, Monitor, Database, Shield } from 'lucide-react';
+import DarkModeToggle from '@/components/DarkModeToggle';
 
 const Features = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-primary-light/10 to-background dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
       {/* Navigation */}
-      <nav className="bg-white shadow-sm border-b">
+      <nav className="bg-white dark:bg-gray-900 shadow-sm border-b border-border transition-colors duration-300">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-          <Link to="/" className="text-lg font-semibold text-gray-900">
-            AMZ Extractor
+          <Link to="/" className="flex items-center space-x-3">
+            <img 
+              src="/lovable-uploads/21e93c14-f110-46be-9a78-e5ddc580d29f.png" 
+              alt="AMZ Extractor Logo" 
+              className="h-8 w-auto"
+            />
+            <span className="text-lg font-semibold text-foreground">AMZ Extractor</span>
           </Link>
-          <div className="space-x-4">
+          <div className="flex items-center space-x-4">
             <Button variant="ghost" asChild>
-              <Link to="/">Home</Link>
+              <Link to="/" className="dark:text-gray-300 dark:hover:text-white">Home</Link>
             </Button>
             <Button variant="ghost" asChild>
-              <Link to="/features">Features</Link>
+              <Link to="/features" className="dark:text-gray-300 dark:hover:text-white">Features</Link>
             </Button>
             <Button variant="ghost" asChild>
-              <Link to="/pricing">Pricing</Link>
+              <Link to="/pricing" className="dark:text-gray-300 dark:hover:text-white">Pricing</Link>
             </Button>
             <Button variant="ghost" asChild>
-              <Link to="/support">Support</Link>
+              <Link to="/support" className="dark:text-gray-300 dark:hover:text-white">Support</Link>
             </Button>
+            <DarkModeToggle />
           </div>
         </div>
       </nav>
@@ -34,11 +40,11 @@ const Features = () => {
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">
-            Powerful Features for Amazon Data Extraction
+          <h1 className="text-5xl font-bold text-foreground mb-6">
+            Powerful Amazon Data Extraction Features
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            AMZ Extractor is packed with features that make extracting Amazon product data fast, accurate, and effortless.
+          <p className="text-xl text-muted-foreground mb-12 max-w-4xl mx-auto">
+            Everything you need to extract, organize, and export Amazon product data efficiently.
           </p>
         </div>
       </section>
@@ -46,158 +52,129 @@ const Features = () => {
       {/* Core Features */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">Core Features</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
-              <Zap className="w-12 h-12 text-[#FF9900] mb-6" />
-              <h3 className="text-xl font-semibold text-blue-600 mb-3">Instant Data Extraction</h3>
-              <p className="text-gray-700 mb-4">
-                Extract product titles, prices, images, descriptions, and more with a single click. No more manual copying and pasting.
-              </p>
-              <ul className="text-sm text-gray-600 space-y-2">
-                <li>• Product titles and descriptions</li>
-                <li>• Current and original prices</li>
-                <li>• Product images (all variants)</li>
-                <li>• Customer reviews and ratings</li>
-                <li>• Product specifications</li>
-              </ul>
+          <h2 className="text-3xl font-bold text-center text-foreground mb-12">Core Features</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="p-6 bg-card rounded-xl shadow-lg border border-border">
+              <Zap className="w-12 h-12 text-primary mb-4" />
+              <h3 className="text-xl font-semibold text-foreground mb-3">Bulk Extraction</h3>
+              <p className="text-muted-foreground">Extract 5-100 products simultaneously from search results or category pages.</p>
             </div>
-
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
-              <div className="flex gap-3 mb-6">
-                <Chrome className="w-6 h-6 text-blue-600" />
-                <Monitor className="w-6 h-6 text-blue-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-blue-600 mb-3">Universal Browser Support</h3>
-              <p className="text-gray-700 mb-4">
-                Works seamlessly on both Google Chrome and Microsoft Edge browsers. Install once, use everywhere.
-              </p>
-              <ul className="text-sm text-gray-600 space-y-2">
-                <li>• Google Chrome compatibility</li>
-                <li>• Microsoft Edge support</li>
-                <li>• Easy installation process</li>
-                <li>• Automatic updates</li>
-                <li>• Cross-platform functionality</li>
-              </ul>
+            <div className="p-6 bg-card rounded-xl shadow-lg border border-border">
+              <Target className="w-12 h-12 text-primary mb-4" />
+              <h3 className="text-xl font-semibold text-foreground mb-3">Affiliate Link Generation</h3>
+              <p className="text-muted-foreground">Automatically convert product URLs to your Amazon Associates affiliate links.</p>
             </div>
-
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
-              <Globe className="w-12 h-12 text-[#FF9900] mb-6" />
-              <h3 className="text-xl font-semibold text-blue-600 mb-3">Global Amazon Support</h3>
-              <p className="text-gray-700 mb-4">
-                Works on all major Amazon marketplaces worldwide. Extract data from any Amazon domain effortlessly.
-              </p>
-              <ul className="text-sm text-gray-600 space-y-2">
-                <li>• Amazon.com (United States)</li>
-                <li>• Amazon.co.uk (United Kingdom)</li>
-                <li>• Amazon.de (Germany)</li>
-                <li>• Amazon.fr (France)</li>
-                <li>• Amazon.ca (Canada) + more</li>
-              </ul>
+            <div className="p-6 bg-card rounded-xl shadow-lg border border-border">
+              <Database className="w-12 h-12 text-primary mb-4" />
+              <h3 className="text-xl font-semibold text-foreground mb-3">Multiple Export Formats</h3>
+              <p className="text-muted-foreground">Export data as JSON, CSV, or Excel files for easy integration with your tools.</p>
+            </div>
+            <div className="p-6 bg-card rounded-xl shadow-lg border border-border">
+              <Globe className="w-12 h-12 text-primary mb-4" />
+              <h3 className="text-xl font-semibold text-foreground mb-3">Global Marketplace Support</h3>
+              <p className="text-muted-foreground">Works across 18+ Amazon marketplaces worldwide (.com, .co.uk, .de, .fr, etc.).</p>
+            </div>
+            <div className="p-6 bg-card rounded-xl shadow-lg border border-border">
+              <Chrome className="w-12 h-12 text-primary mb-4" />
+              <h3 className="text-xl font-semibold text-foreground mb-3">Browser Compatibility</h3>
+              <p className="text-muted-foreground">Compatible with both Google Chrome and Microsoft Edge browsers.</p>
+            </div>
+            <div className="p-6 bg-card rounded-xl shadow-lg border border-border">
+              <Shield className="w-12 h-12 text-primary mb-4" />
+              <h3 className="text-xl font-semibold text-foreground mb-3">Privacy Focused</h3>
+              <p className="text-muted-foreground">All data processing happens locally on your machine. No data sent to external servers.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Export Features */}
-      <section className="py-16 px-4 bg-gray-50">
+      {/* Data Points */}
+      <section className="py-16 px-4 bg-muted/30">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">Export & Integration</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
-              <FileText className="w-12 h-12 text-[#FF9900] mb-6" />
-              <h3 className="text-2xl font-semibold text-blue-600 mb-3">Multiple Export Formats</h3>
-              <p className="text-gray-700 mb-6">
-                Export your extracted data in the format that works best for your workflow. Perfect for content creation and analysis.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                  <span>JSON format for developers</span>
-                </div>
-                <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                  <span>CSV format for spreadsheets</span>
-                </div>
-                <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                  <span>Formatted text for articles</span>
-                </div>
-                <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                  <span>Clipboard integration</span>
-                </div>
-              </div>
+          <h2 className="text-3xl font-bold text-center text-foreground mb-12">What Data Can You Extract?</h2>
+          <div className="grid md:grid-cols-2 gap-12">
+            <div>
+              <h3 className="text-2xl font-semibold text-foreground mb-6">Product Information</h3>
+              <ul className="space-y-3">
+                <li className="flex items-center">
+                  <CheckCircle className="w-5 h-5 text-success mr-3" />
+                  <span className="text-foreground">Product titles and descriptions</span>
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle className="w-5 h-5 text-success mr-3" />
+                  <span className="text-foreground">Current and original prices</span>
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle className="w-5 h-5 text-success mr-3" />
+                  <span className="text-foreground">High-resolution product images</span>
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle className="w-5 h-5 text-success mr-3" />
+                  <span className="text-foreground">Product ratings and review counts</span>
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle className="w-5 h-5 text-success mr-3" />
+                  <span className="text-foreground">Key product features and specifications</span>
+                </li>
+              </ul>
             </div>
-
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
-              <Clock className="w-12 h-12 text-[#FF9900] mb-6" />
-              <h3 className="text-2xl font-semibold text-blue-600 mb-3">Time-Saving Automation</h3>
-              <p className="text-gray-700 mb-6">
-                Automate your data collection workflow and save hours of manual work. Perfect for affiliate marketers and content creators.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                  <span>Batch processing capability</span>
-                </div>
-                <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                  <span>Auto-detect product variants</span>
-                </div>
-                <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                  <span>Smart data formatting</span>
-                </div>
-                <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                  <span>One-click extraction</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Security & Support */}
-      <section className="py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-12">Security & Support</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
-              <Shield className="w-12 h-12 text-[#FF9900] mb-6 mx-auto" />
-              <h3 className="text-xl font-semibold text-blue-600 mb-3">Secure & Private</h3>
-              <p className="text-gray-700">
-                Your data stays private. AMZ Extractor processes everything locally on your browser without sending data to external servers.
-              </p>
-            </div>
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
-              <Download className="w-12 h-12 text-[#FF9900] mb-6 mx-auto" />
-              <h3 className="text-xl font-semibold text-blue-600 mb-3">Lifetime Access</h3>
-              <p className="text-gray-700">
-                One-time purchase gives you lifetime access to AMZ Extractor with free updates and email support included.
-              </p>
+            <div>
+              <h3 className="text-2xl font-semibold text-foreground mb-6">Additional Data</h3>
+              <ul className="space-y-3">
+                <li className="flex items-center">
+                  <CheckCircle className="w-5 h-5 text-success mr-3" />
+                  <span className="text-foreground">Brand information</span>
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle className="w-5 h-5 text-success mr-3" />
+                  <span className="text-foreground">Availability status</span>
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle className="w-5 h-5 text-success mr-3" />
+                  <span className="text-foreground">Category and subcategory</span>
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle className="w-5 h-5 text-success mr-3" />
+                  <span className="text-foreground">Product URLs (standard and affiliate)</span>
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle className="w-5 h-5 text-success mr-3" />
+                  <span className="text-foreground">Prime shipping information</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Ready to Start Extracting?</h2>
-          <p className="text-xl text-gray-600 mb-12">
-            Join thousands of affiliate marketers and content creators who save hours daily with AMZ Extractor.
+          <h2 className="text-3xl font-bold text-foreground mb-6">Ready to Start Extracting?</h2>
+          <p className="text-xl text-muted-foreground mb-8">
+            Join thousands of marketers, creators, and sellers who are saving hours with AMZ Extractor.
           </p>
-          <PurchaseButton />
+          <Button size="lg" className="bg-primary hover:bg-primary-dark text-primary-foreground font-bold py-4 px-8 text-lg" asChild>
+            <Link to="/pricing">
+              Get AMZ Extractor Now <ArrowRight className="w-5 h-5 ml-2" />
+            </Link>
+          </Button>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 py-12 text-center">
-        <p className="text-gray-400">
-          &copy; {new Date().getFullYear()} AMZ Extractor. All rights reserved.
-        </p>
+      <footer className="bg-gray-900 dark:bg-black py-12 text-center transition-colors duration-300">
+        <div className="max-w-6xl mx-auto px-4">
+          <p className="text-gray-400 mb-4">
+            &copy; {new Date().getFullYear()} AMZ Extractor. All rights reserved.
+          </p>
+          <div className="flex justify-center space-x-6 text-sm text-gray-500">
+            <Link to="/privacy" className="hover:text-gray-300">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-gray-300">Terms of Service</Link>
+            <Link to="/refund" className="hover:text-gray-300">Refund Policy</Link>
+            <Link to="/support" className="hover:text-gray-300">Support</Link>
+          </div>
+        </div>
       </footer>
     </div>
   );

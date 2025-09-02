@@ -38,7 +38,7 @@ const PurchaseButton = () => {
       onClick={handlePurchase}
       disabled={loading}
       size="lg"
-      className="w-full sm:w-auto bg-[#FF9900] hover:bg-[#e6890f] text-white font-bold py-4 px-8 text-lg"
+      className="w-full sm:w-auto bg-primary hover:bg-primary-dark text-primary-foreground font-bold py-4 px-8 text-lg"
     >
       {loading ? (
         <>
