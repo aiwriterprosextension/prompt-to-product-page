@@ -14,7 +14,7 @@ const PrivacyPolicy = () => {
               <div className="w-8 h-8 bg-gradient-to-r from-primary to-primary-dark rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">AI</span>
               </div>
-              <span className="text-xl font-bold gradient-text">AI Writer Pros</span>
+              <span className="text-xl font-bold gradient-text">AMZ Extractor</span>
             </Link>
             <Link to="/" className="flex items-center text-muted-foreground hover:text-foreground">
               <ArrowLeft className="w-4 h-4 mr-1" />
@@ -47,7 +47,7 @@ const PrivacyPolicy = () => {
                 </div>
                 <div className="space-y-4 text-muted-foreground">
                   <h3 className="text-lg font-semibold text-foreground">Personal Information</h3>
-                  <p>When you purchase AI Writer Pros, we collect:</p>
+                  <p>When you purchase AMZ Extractor, we collect:</p>
                   <ul className="list-disc list-inside space-y-1 ml-4">
                     <li>Email address for purchase confirmation and support</li>
                     <li>Payment information (processed securely by Stripe)</li>
@@ -93,7 +93,7 @@ const PrivacyPolicy = () => {
                   <h2 className="text-2xl font-bold">Chrome Extension Permissions</h2>
                 </div>
                 <div className="space-y-4 text-muted-foreground">
-                  <p>AI Writer Pros requires the following Chrome permissions:</p>
+                  <p>AMZ Extractor requires the following Chrome permissions:</p>
                   
                   <div className="space-y-4">
                     <div className="border border-border rounded-lg p-4">
