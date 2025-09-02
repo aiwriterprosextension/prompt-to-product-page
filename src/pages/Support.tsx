@@ -23,16 +23,16 @@ const Support = () => {
       title: 'Installation & Setup',
       questions: [
         {
-          q: 'How do I install the AI Writer Pros extension?',
+          q: 'How do I install the AMZ Extractor extension?',
           a: 'Download the .crx file from your purchase confirmation email, go to chrome://extensions/, enable Developer mode, and drag the file into the page. The extension will install automatically and appear in your toolbar.'
         },
         {
           q: 'Which browsers are supported?',
-          a: 'AI Writer Pros works with Google Chrome (v88+), Microsoft Edge (Chromium-based), Brave Browser, and Opera. Firefox support is planned for 2024.'
+          a: 'AMZ Extractor works with Google Chrome (v88+), Microsoft Edge (Chromium-based), Brave Browser, and Opera. Firefox support is planned for 2024.'
         },
         {
           q: 'Why do I need to enable Developer mode?',
-          a: 'Since AI Writer Pros is distributed directly (not through Chrome Web Store), Developer mode is required to install the extension manually. This ensures you get the latest version with all features.'
+          a: 'Since AMZ Extractor is distributed directly (not through Chrome Web Store), Developer mode is required to install the extension manually. This ensures you get the latest version with all features.'
         },
         {
           q: 'Can I install on multiple computers?',
@@ -46,11 +46,11 @@ const Support = () => {
       questions: [
         {
           q: 'How do I extract product data from Amazon?',
-          a: 'Navigate to any Amazon product page and click the AI Writer Pros icon in your browser toolbar. The extension automatically detects and extracts all available product information including title, price, features, reviews, and specifications.'
+          a: 'Navigate to any Amazon product page and click the AMZ Extractor icon in your browser toolbar. The extension automatically detects and extracts all available product information including title, price, features, reviews, and specifications.'
         },
         {
           q: 'Which Amazon sites are supported?',
-          a: 'AI Writer Pros works with all major Amazon domains: .com, .co.uk, .ca, .de, .fr, .it, .es, .com.au, .co.jp, .in, .com.mx, .com.br, and more.'
+          a: 'AMZ Extractor works with all major Amazon domains: .com, .co.uk, .ca, .de, .fr, .it, .es, .com.au, .co.jp, .in, .com.mx, .com.br, and more.'
         },
         {
           q: 'What data formats can I export?',
@@ -58,7 +58,7 @@ const Support = () => {
         },
         {
           q: 'How accurate is the extracted data?',
-          a: 'AI Writer Pros uses advanced parsing algorithms with 98%+ accuracy. The extension continuously updates to handle Amazon\'s layout changes and new product formats.'
+          a: 'AMZ Extractor uses advanced parsing algorithms with 98%+ accuracy. The extension continuously updates to handle Amazon\'s layout changes and new product formats.'
         }
       ]
     },
@@ -76,11 +76,11 @@ const Support = () => {
         },
         {
           q: 'The extension conflicts with other tools',
-          a: 'Disable other Amazon-related extensions temporarily. AI Writer Pros is compatible with most tools but may conflict with similar product scrapers or Amazon assistants.'
+          a: 'Disable other Amazon-related extensions temporarily. AMZ Extractor is compatible with most tools but may conflict with similar product scrapers or Amazon assistants.'
         },
         {
           q: 'Extension not showing in toolbar',
-          a: 'Click the puzzle piece icon in Chrome toolbar and pin AI Writer Pros. If not visible, go to chrome://extensions/ and ensure the extension is enabled.'
+          a: 'Click the puzzle piece icon in Chrome toolbar and pin AMZ Extractor. If not visible, go to chrome://extensions/ and ensure the extension is enabled.'
         }
       ]
     },
@@ -94,11 +94,11 @@ const Support = () => {
         },
         {
           q: 'Can I use the extension on multiple devices?',
-          a: 'Yes! Your AI Writer Pros license allows installation on unlimited personal devices. Download and install on each browser where you want to use it.'
+          a: 'Yes! Your AMZ Extractor license allows installation on unlimited personal devices. Download and install on each browser where you want to use it.'
         },
         {
           q: 'Is there a subscription fee?',
-          a: 'No! AI Writer Pros is a one-time purchase of $27. No recurring fees, subscription costs, or hidden charges. You own the software forever with free updates.'
+          a: 'No! AMZ Extractor is a one-time purchase of $27. No recurring fees, subscription costs, or hidden charges. You own the software forever with free updates.'
         },
         {
           q: 'Do I get updates and new features?',
@@ -119,9 +119,9 @@ const Support = () => {
   return (
     <>
       <Helmet>
-        <title>Support - AI Writer Pros | Amazon Product Data Extraction Help</title>
-        <meta name="description" content="Get help with AI Writer Pros Amazon extension. Installation guides, troubleshooting, FAQ, and expert support for product data extraction and content creation." />
-        <meta name="keywords" content="AI Writer Pros support, Amazon extension help, product data extraction support, Chrome extension troubleshooting, Amazon scraper help" />
+        <title>Support - AMZ Extractor | Amazon Product Data Extraction Help</title>
+        <meta name="description" content="Get help with AMZ Extractor Amazon extension. Installation guides, troubleshooting, FAQ, and expert support for product data extraction and content creation." />
+        <meta name="keywords" content="AMZ Extractor support, Amazon extension help, product data extraction support, Chrome extension troubleshooting, Amazon scraper help" />
       </Helmet>
 
       <div className="min-h-screen bg-background text-foreground">
@@ -310,7 +310,7 @@ const Support = () => {
                   <Link to="/best-practices" className="gradient-card rounded-xl p-6 hover:shadow-lg transition-shadow">
                     <Star className="w-8 h-8 text-primary mb-4" />
                     <h3 className="font-semibold mb-2 text-foreground">Best Practices</h3>
-                    <p className="text-muted-foreground text-sm">Tips for getting the most out of AI Writer Pros</p>
+                    <p className="text-muted-foreground text-sm">Tips for getting the most out of AMZ Extractor</p>
                   </Link>
                 </div>
               </div>

@@ -75,7 +75,7 @@ const TermsOfService = () => {
               <section className="gradient-card rounded-xl p-8">
                 <h2 className="text-2xl font-bold mb-4">3. Acceptable Use Policy</h2>
                 <div className="space-y-4 text-muted-foreground">
-                  <p>You agree to use AI Writer Pros only for lawful purposes and in accordance with these Terms. You agree NOT to:</p>
+                  <p>You agree to use AMZ Extractor only for lawful purposes and in accordance with these Terms. You agree NOT to:</p>
                   <ul className="list-disc list-inside space-y-1 ml-4">
                     <li>Violate any applicable laws or regulations</li>
                     <li>Infringe upon the rights of others</li>
@@ -100,7 +100,7 @@ const TermsOfService = () => {
                 <h2 className="text-2xl font-bold mb-4">4. Intellectual Property Rights</h2>
                 <div className="space-y-4 text-muted-foreground">
                   <p>
-                    AI Writer Pros and all related materials, including but not limited to software, documentation, trademarks, and copyrights, are owned by us or our licensors.
+                    AMZ Extractor and all related materials, including but not limited to software, documentation, trademarks, and copyrights, are owned by us or our licensors.
                   </p>
                   <p>
                     Your purchase grants you a license to use the Extension but does not transfer any ownership rights to you.
@@ -111,7 +111,7 @@ const TermsOfService = () => {
               <section className="gradient-card rounded-xl p-8">
                 <h2 className="text-2xl font-bold mb-4">5. User Obligations</h2>
                 <div className="space-y-4 text-muted-foreground">
-                  <p>As a user of AI Writer Pros, you agree to:</p>
+                  <p>As a user of AMZ Extractor, you agree to:</p>
                   <ul className="list-disc list-inside space-y-1 ml-4">
                     <li>Provide accurate information during purchase</li>
                     <li>Keep your license information secure and confidential</li>

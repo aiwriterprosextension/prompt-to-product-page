@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { Book, Download, Play, ChevronRight, ArrowLeft, Search, ExternalLink } from 'lucide-react';
 import Button from '../components/Button';
-import { Link } from 'react-router-dom';
+import { Link                    <h2 className="text-2xl font-bold mb-4 text-foreground">What is AMZ Extractor?</h2>
+                    <div className="gradient-card rounded-xl p-6">
+                        <p className="text-muted-foreground mb-4">
+                        AMZ Extractor is a powerful Chrome extension designed to extract comprehensive product data from Amazon pages. Built for content creators, affiliate marketers, and researchers, it transforms how you gather and utilize Amazon product information.rom 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
 const Documentation = () => {
@@ -12,7 +15,7 @@ const Documentation = () => {
       id: 'overview',
       title: 'Overview',
       items: [
-        'What is AI Writer Pros',
+        'What is AMZ Extractor',
         'Key Features',
         'System Requirements'
       ]
@@ -58,9 +61,9 @@ const Documentation = () => {
   return (
     <>
       <Helmet>
-        <title>Documentation - AI Writer Pros | Complete Amazon Extension Guide</title>
-        <meta name="description" content="Complete documentation for AI Writer Pros Amazon extension. API reference, technical guides, troubleshooting, and comprehensive feature documentation." />
-        <meta name="keywords" content="AI Writer Pros documentation, Amazon extension API, technical reference, developer guide, Chrome extension docs" />
+        <title>Documentation - AMZ Extractor | Complete Amazon Extension Guide</title>
+        <meta name="description" content="Complete documentation for AMZ Extractor Amazon extension. API reference, technical guides, troubleshooting, and comprehensive feature documentation." />
+        <meta name="keywords" content="AMZ Extractor documentation, Amazon extension API, technical reference, developer guide, Chrome extension docs" />
         <link rel="canonical" href="https://aiwriterpros.com/documentation" />
       </Helmet>
 
@@ -142,10 +145,10 @@ const Documentation = () => {
               {/* Hero */}
               <div className="mb-12">
                 <h1 className="text-4xl font-bold mb-4 text-foreground">
-                  AI Writer Pros <span className="gradient-text">Documentation</span>
+                  AMZ Extractor <span className="gradient-text">Documentation</span>
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8">
-                  Comprehensive guides and technical reference for AI Writer Pros
+                  Comprehensive guides and technical reference for AMZ Extractor
                 </p>
                 
                 <div className="flex flex-wrap gap-4">
@@ -286,7 +289,7 @@ const Documentation = () => {
                     <h2 className="text-2xl font-bold mb-4 text-foreground">Installation Guide</h2>
                     <div className="gradient-card rounded-xl p-6">
                       <p className="text-muted-foreground mb-4">
-                        Follow these steps to install AI Writer Pros on your Chrome browser:
+                        Follow these steps to install AMZ Extractor on your Chrome browser:
                       </p>
                       <ol className="space-y-3 text-sm">
                         <li className="flex items-start">

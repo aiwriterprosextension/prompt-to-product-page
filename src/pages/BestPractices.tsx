@@ -50,7 +50,7 @@ const BestPractices = () => {
                   <span className="gradient-text">Best Practices</span> for Success
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8">
-                  Proven strategies to maximize your results with AI Writer Pros
+                  Proven strategies to maximize your results with AMZ Extractor
                 </p>
               </div>
 
@@ -244,7 +244,7 @@ const BestPractices = () => {
                       </div>
                     </div>
                     <p className="text-muted-foreground text-sm mb-3">
-                      "Using AI Writer Pros, I increased my content output by 300% and my affiliate commissions by 250% in just 3 months."
+                      "Using AMZ Extractor, I increased my content output by 300% and my affiliate commissions by 250% in just 3 months."
                     </p>
                     <p className="text-xs text-muted-foreground">
                       <strong>Strategy:</strong> Daily product research + weekly comparison posts
@@ -276,7 +276,7 @@ const BestPractices = () => {
                 <div className="gradient-card rounded-xl p-8 inline-block">
                   <h2 className="text-xl font-bold mb-4 text-foreground">Ready to Implement These Strategies?</h2>
                   <p className="text-muted-foreground mb-6">
-                    Join thousands of successful content creators and marketers using AI Writer Pros.
+                    Join thousands of successful content creators and marketers using AMZ Extractor.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Link to="/support">

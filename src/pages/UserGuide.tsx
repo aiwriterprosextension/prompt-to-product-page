@@ -13,39 +13,43 @@ const UserGuide = () => {
       id: 'getting-started',
       title: 'Getting Started',
       items: [
+        'System Requirements',
         'Installation Guide',
-        'First Steps',
-        'Basic Configuration',
-        'Browser Setup'
+        'Initial Setup',
+        'First-time Use',
+        'Account Setup'
       ]
     },
     {
       id: 'user-guide',
       title: 'User Guide',
       items: [
-        'Extracting Product Data',
-        'Export Formats',
-        'Advanced Features',
-        'Bulk Operations'
+        'Interface Overview',
+        'Feature Tutorials',
+        'Keyboard Shortcuts',
+        'Settings Guide',
+        'Data Interpretation'
       ]
     },
     {
       id: 'amazon-sites',
       title: 'Amazon Sites',
       items: [
-        'Supported Countries',
-        'Regional Differences',
-        'Multi-Language Support'
+        'Supported Marketplaces',
+        'Regional Features',
+        'Data Differences',
+        'Multi-marketplace Tips'
       ]
     },
     {
-      id: 'data-formats',
+      id: 'data-export',
       title: 'Data & Export',
       items: [
-        'JSON Export',
-        'CSV Format',
-        'Text Content',
-        'Custom Templates'
+        'Available Data Fields',
+        'Export Formats',
+        'Filtering Options',
+        'Bulk Operations',
+        'Data Accuracy'
       ]
     },
     {
@@ -54,8 +58,10 @@ const UserGuide = () => {
       items: [
         'Common Issues',
         'Browser Compatibility',
+        'Extension Issues',
+        'Extraction Errors',
         'Performance Tips',
-        'Error Messages'
+        'Support Contact'
       ]
     }
   ];
@@ -63,10 +69,10 @@ const UserGuide = () => {
   return (
     <>
       <Helmet>
-        <title>User Guide - AI Writer Pros | Complete Amazon Extension Documentation</title>
-        <meta name="description" content="Complete user guide for AI Writer Pros Amazon extension. Step-by-step tutorials, installation guide, data extraction tips, and troubleshooting help." />
-        <meta name="keywords" content="AI Writer Pros user guide, Amazon extension tutorial, product data extraction guide, Chrome extension documentation, Amazon scraper manual" />
-        <link rel="canonical" href="https://aiwriterpros.com/user-guide" />
+        <title>User Guide - AMZ Extractor | Complete Amazon Data Extraction Guide</title>
+        <meta name="description" content="Complete user guide for AMZ Extractor Chrome extension. Learn about installation, data extraction, supported marketplaces, export options, and troubleshooting." />
+        <meta name="keywords" content="AMZ Extractor guide, Amazon data extraction, product information scraper, Chrome extension tutorial, Amazon marketplace tool" />
+        <link rel="canonical" href="https://amzextractor.com/user-guide" />
       </Helmet>
 
       <div className="min-h-screen bg-background text-foreground">
@@ -77,15 +83,15 @@ const UserGuide = () => {
               <Link to="/" className="flex items-center space-x-2">
                 <img 
                   src="/lovable-uploads/21e93c14-f110-46be-9a78-e5ddc580d29f.png" 
-                  alt="AI Writer Pros" 
+                  alt="AMZ Extractor" 
                   className="w-8 h-8 dark:hidden"
                 />
                 <img 
                   src="/lovable-uploads/3a71676f-ab4f-464b-9ccf-41cecd50b2b0.png" 
-                  alt="AI Writer Pros" 
+                  alt="AMZ Extractor" 
                   className="w-8 h-8 hidden dark:block"
                 />
-                <span className="text-xl font-bold gradient-text">AI Writer Pros</span>
+                <span className="text-xl font-bold gradient-text">AMZ Extractor</span>
               </Link>
               <Link to="/support" className="flex items-center text-muted-foreground hover:text-foreground">
                 <ArrowLeft className="w-4 h-4 mr-1" />
@@ -147,10 +153,10 @@ const UserGuide = () => {
               {/* Hero */}
               <div className="mb-12">
                 <h1 className="text-4xl font-bold mb-4 text-foreground">
-                  AI Writer Pros <span className="gradient-text">User Guide</span>
+                  AMZ Extractor <span className="gradient-text">User Guide</span>
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8">
-                  Everything you need to know about extracting Amazon product data and creating content
+                  Your complete guide to extracting and managing Amazon product data across all marketplaces
                 </p>
                 
                 <div className="flex flex-wrap gap-4">
@@ -195,11 +201,56 @@ const UserGuide = () => {
               {/* Content Based on Active Section */}
               {activeSection === 'getting-started' && (
                 <div className="space-y-8">
+                  <section id="system-requirements">
+                    <h2 className="text-2xl font-bold mb-4 text-foreground">System Requirements</h2>
+                    <div className="gradient-card rounded-xl p-6">
+                      <p className="text-muted-foreground mb-4">
+                        Make sure your system meets these requirements before installation:
+                      </p>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                          <h4 className="font-semibold mb-3 text-foreground">Browser Requirements</h4>
+                          <ul className="space-y-2 text-sm">
+                            <li className="flex items-center">
+                              <ChevronRight className="w-4 h-4 text-primary mr-2" />
+                              Chrome version 88 or higher
+                            </li>
+                            <li className="flex items-center">
+                              <ChevronRight className="w-4 h-4 text-primary mr-2" />
+                              Firefox version 78 or higher
+                            </li>
+                            <li className="flex items-center">
+                              <ChevronRight className="w-4 h-4 text-primary mr-2" />
+                              Microsoft Edge version 88 or higher
+                            </li>
+                          </ul>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold mb-3 text-foreground">System Specs</h4>
+                          <ul className="space-y-2 text-sm">
+                            <li className="flex items-center">
+                              <ChevronRight className="w-4 h-4 text-primary mr-2" />
+                              2GB RAM minimum
+                            </li>
+                            <li className="flex items-center">
+                              <ChevronRight className="w-4 h-4 text-primary mr-2" />
+                              Stable internet connection
+                            </li>
+                            <li className="flex items-center">
+                              <ChevronRight className="w-4 h-4 text-primary mr-2" />
+                              100MB free disk space
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+
                   <section id="installation-guide">
                     <h2 className="text-2xl font-bold mb-4 text-foreground">Installation Guide</h2>
                     <div className="gradient-card rounded-xl p-6">
                       <p className="text-muted-foreground mb-6">
-                        Follow these simple steps to install AI Writer Pros on your Chrome browser:
+                        Follow these simple steps to install AMZ Extractor on your browser:
                       </p>
                       <div className="space-y-4">
                         <div className="flex items-start">
@@ -234,15 +285,45 @@ const UserGuide = () => {
                           <span className="flex-shrink-0 w-8 h-8 bg-success text-success-foreground rounded-full flex items-center justify-center text-sm mr-4 mt-1">✓</span>
                           <div>
                             <h4 className="font-semibold mb-1 text-foreground">You're Ready!</h4>
-                            <p className="text-muted-foreground text-sm">The AI Writer Pros icon should now appear in your toolbar. Pin it for easy access.</p>
+                            <p className="text-muted-foreground text-sm">The AMZ Extractor icon should now appear in your toolbar. Pin it for easy access.</p>
                           </div>
                         </div>
                       </div>
                     </div>
                   </section>
 
-                  <section id="first-steps">
-                    <h2 className="text-2xl font-bold mb-4 text-foreground">Your First Extraction</h2>
+                  <section id="initial-setup">
+                    <h2 className="text-2xl font-bold mb-4 text-foreground">Initial Setup</h2>
+                    <div className="gradient-card rounded-xl p-6">
+                      <p className="text-muted-foreground mb-4">Configure your extension for optimal performance:</p>
+                      <div className="space-y-4">
+                        <div className="flex items-start">
+                          <div className="flex-shrink-0 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm mr-4 mt-1">1</div>
+                          <div>
+                            <h4 className="font-semibold mb-1 text-foreground">Extension Settings</h4>
+                            <p className="text-muted-foreground text-sm">Click the extension icon and select "Settings" to configure your preferences</p>
+                          </div>
+                        </div>
+                        <div className="flex items-start">
+                          <div className="flex-shrink-0 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm mr-4 mt-1">2</div>
+                          <div>
+                            <h4 className="font-semibold mb-1 text-foreground">Data Preferences</h4>
+                            <p className="text-muted-foreground text-sm">Choose which data fields you want to extract by default</p>
+                          </div>
+                        </div>
+                        <div className="flex items-start">
+                          <div className="flex-shrink-0 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm mr-4 mt-1">3</div>
+                          <div>
+                            <h4 className="font-semibold mb-1 text-foreground">Export Format</h4>
+                            <p className="text-muted-foreground text-sm">Set your preferred export format (JSON, CSV, or Text)</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+
+                  <section id="first-time-use">
+                    <h2 className="text-2xl font-bold mb-4 text-foreground">First-time User Walkthrough</h2>
                     <div className="gradient-card rounded-xl p-6">
                       <p className="text-muted-foreground mb-4">
                         Ready to extract your first product? Here's how:
@@ -254,7 +335,7 @@ const UserGuide = () => {
                         </li>
                         <li className="flex items-center">
                           <CheckCircle className="w-4 h-4 text-success mr-3" />
-                          <span className="text-foreground">Click the AI Writer Pros icon in your browser toolbar</span>
+                          <span className="text-foreground">Click the AMZ Extractor icon in your browser toolbar</span>
                         </li>
                         <li className="flex items-center">
                           <CheckCircle className="w-4 h-4 text-success mr-3" />
@@ -276,11 +357,64 @@ const UserGuide = () => {
 
               {activeSection === 'user-guide' && (
                 <div className="space-y-8">
-                  <section id="extracting-product-data">
-                    <h2 className="text-2xl font-bold mb-4 text-foreground">Extracting Product Data</h2>
+                  <section id="interface-overview">
+                    <h2 className="text-2xl font-bold mb-4 text-foreground">Interface Overview</h2>
                     <div className="gradient-card rounded-xl p-6">
                       <p className="text-muted-foreground mb-4">
-                        AI Writer Pros extracts comprehensive product data from Amazon pages:
+                        Get familiar with AMZ Extractor's interface components:
+                      </p>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                          <h4 className="font-semibold mb-3 text-foreground">Main Interface</h4>
+                          <ul className="space-y-2 text-sm">
+                            <li className="flex items-center">
+                              <ChevronRight className="w-4 h-4 text-primary mr-2" />
+                              Toolbar Icon & Menu
+                            </li>
+                            <li className="flex items-center">
+                              <ChevronRight className="w-4 h-4 text-primary mr-2" />
+                              Data Preview Panel
+                            </li>
+                            <li className="flex items-center">
+                              <ChevronRight className="w-4 h-4 text-primary mr-2" />
+                              Export Options Bar
+                            </li>
+                            <li className="flex items-center">
+                              <ChevronRight className="w-4 h-4 text-primary mr-2" />
+                              Settings Dashboard
+                            </li>
+                          </ul>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold mb-3 text-foreground">Control Elements</h4>
+                          <ul className="space-y-2 text-sm">
+                            <li className="flex items-center">
+                              <ChevronRight className="w-4 h-4 text-primary mr-2" />
+                              Extract Button
+                            </li>
+                            <li className="flex items-center">
+                              <ChevronRight className="w-4 h-4 text-primary mr-2" />
+                              Format Selector
+                            </li>
+                            <li className="flex items-center">
+                              <ChevronRight className="w-4 h-4 text-primary mr-2" />
+                              Field Customizer
+                            </li>
+                            <li className="flex items-center">
+                              <ChevronRight className="w-4 h-4 text-primary mr-2" />
+                              Bulk Actions Menu
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+
+                  <section id="feature-tutorials">
+                    <h2 className="text-2xl font-bold mb-4 text-foreground">Step-by-Step Feature Tutorials</h2>
+                    <div className="gradient-card rounded-xl p-6">
+                      <p className="text-muted-foreground mb-4">
+                        Learn how to use AMZ Extractor's powerful features:
                       </p>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>

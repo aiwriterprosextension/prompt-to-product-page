@@ -30,7 +30,7 @@ const MainNavigation = () => {
                   <NavigationMenuLink className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                     <div className="text-sm font-medium leading-none">User Guide</div>
                     <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                      Learn how to use AMZ Extractor effectively
+                      Complete guide to using AMZ Extractor
                     </p>
                   </NavigationMenuLink>
                 </Link>
@@ -40,7 +40,27 @@ const MainNavigation = () => {
                   <NavigationMenuLink className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                     <div className="text-sm font-medium leading-none">Best Practices</div>
                     <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                      Tips and tricks for maximum productivity
+                      Expert tips for Amazon data extraction
+                    </p>
+                  </NavigationMenuLink>
+                </Link>
+              </li>
+              <li>
+                <Link to="/faq">
+                  <NavigationMenuLink className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                    <div className="text-sm font-medium leading-none">FAQ</div>
+                    <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                      Common questions and answers
+                    </p>
+                  </NavigationMenuLink>
+                </Link>
+              </li>
+              <li>
+                <Link to="/video-tutorials">
+                  <NavigationMenuLink className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                    <div className="text-sm font-medium leading-none">Video Tutorials</div>
+                    <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                      Step-by-step video guides
                     </p>
                   </NavigationMenuLink>
                 </Link>
