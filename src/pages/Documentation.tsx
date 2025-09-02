@@ -1,13 +1,7 @@
 import React, { useState } from 'react';
 import { Book, Download, Play, ChevronRight, ArrowLeft, Search, ExternalLink } from 'lucide-react';
 import Button from '../components/Button';
-import { Link                       <h2 className="text-2xl font-bold mb-4 text-foreground">What is AMZ Extractor?</h2>
-                    <div className="gradient-card rounded-xl p-6">
-                        <p className="text-muted-foreground mb-4">
-                        AMZ Extractor is a powerful Chrome extension designed to extract comprehensive product data from Amazon pages. Built for content creators, affiliate marketers, and researchers, it transforms how you gather and utilize Amazon product information.             <h2 className="text-2xl font-bold mb-4 text-foreground">What is AMZ Extractor?</h2>
-                    <div className="gradient-card rounded-xl p-6">
-                        <p className="text-muted-foreground mb-4">
-                        AMZ Extractor is a powerful Chrome extension designed to extract comprehensive product data from Amazon pages. Built for content creators, affiliate marketers, and researchers, it transforms how you gather and utilize Amazon product information.rom 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
 const Documentation = () => {
@@ -86,7 +80,7 @@ const Documentation = () => {
                   alt="AMZ Extractor" 
                   className="w-8 h-8 hidden dark:block"
                 />
-                <span className="text-xl font-bold gradient-text">AI Writer Pros</span>
+                <span className="text-xl font-bold gradient-text">AMZ Extractor</span>
               </Link>
               <Link to="/support" className="flex items-center text-muted-foreground hover:text-foreground">
                 <ArrowLeft className="w-4 h-4 mr-1" />
@@ -200,11 +194,11 @@ const Documentation = () => {
               {/* Content Based on Active Section */}
               {activeSection === 'overview' && (
                 <div className="space-y-8">
-                  <section id="what-is-ai-writer-pros">
-                    <h2 className="text-2xl font-bold mb-4 text-foreground">What is AI Writer Pros?</h2>
+                  <section id="what-is-amz-extractor">
+                    <h2 className="text-2xl font-bold mb-4 text-foreground">What is AMZ Extractor?</h2>
                     <div className="gradient-card rounded-xl p-6">
                       <p className="text-muted-foreground mb-4">
-                        AI Writer Pros is a powerful Chrome extension designed to extract comprehensive product data from Amazon pages. Built for content creators, affiliate marketers, and researchers, it transforms how you gather and utilize Amazon product information.
+                        AMZ Extractor is a powerful Chrome extension designed to extract comprehensive product data from Amazon pages. Built for content creators, affiliate marketers, and researchers, it transforms how you gather and utilize Amazon product information.
                       </p>
                       <h4 className="font-semibold mb-2 text-foreground">Perfect for:</h4>
                       <ul className="space-y-2 text-sm text-muted-foreground">
