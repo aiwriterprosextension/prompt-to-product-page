@@ -23,12 +23,12 @@ const BestPractices = () => {
               <Link to="/" className="flex items-center space-x-2">
                 <img 
                   src="/lovable-uploads/21e93c14-f110-46be-9a78-e5ddc580d29f.png" 
-                  alt="AI Writer Pros" 
+                  alt="AMZ Extractor" 
                   className="w-8 h-8 dark:hidden"
                 />
                 <img 
                   src="/lovable-uploads/3a71676f-ab4f-464b-9ccf-41cecd50b2b0.png" 
-                  alt="AI Writer Pros" 
+                  alt="AMZ Extractor" 
                   className="w-8 h-8 hidden dark:block"
                 />
                 <span className="text-xl font-bold gradient-text">AMZ Extractor</span>
