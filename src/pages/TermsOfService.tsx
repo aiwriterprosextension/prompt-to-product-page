@@ -44,10 +44,10 @@ const TermsOfService = () => {
                 <h2 className="text-2xl font-bold mb-4">1. Acceptance of Terms</h2>
                 <div className="space-y-4 text-muted-foreground">
                   <p>
-                    By purchasing, downloading, installing, or using AI Writer Pros ("the Extension"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use the Extension.
+                    By purchasing, downloading, installing, or using AMZ Extractor ("the Extension"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use the Extension.
                   </p>
                   <p>
-                    These Terms constitute a legally binding agreement between you and AI Writer Pros ("we," "us," or "our").
+                    These Terms constitute a legally binding agreement between you and AMZ Extractor ("we," "us," or "our").
                   </p>
                 </div>
               </section>
@@ -57,7 +57,7 @@ const TermsOfService = () => {
                 <div className="space-y-4 text-muted-foreground">
                   <h3 className="text-lg font-semibold text-foreground">License Grant</h3>
                   <p>
-                    Subject to your compliance with these Terms, we grant you a limited, non-exclusive, non-transferable, revocable license to use AI Writer Pros for your personal or commercial use.
+                    Subject to your compliance with these Terms, we grant you a limited, non-exclusive, non-transferable, revocable license to use AMZ Extractor for your personal or commercial use.
                   </p>
                   
                   <h3 className="text-lg font-semibold text-foreground">License Restrictions</h3>
@@ -127,7 +127,7 @@ const TermsOfService = () => {
                 <h2 className="text-2xl font-bold mb-4">6. Service Availability</h2>
                 <div className="space-y-4 text-muted-foreground">
                   <p>
-                    While we strive to provide reliable service, we cannot guarantee that AI Writer Pros will be available at all times or will work perfectly with all versions of Chrome or all Amazon pages.
+                    While we strive to provide reliable service, we cannot guarantee that AMZ Extractor will be available at all times or will work perfectly with all versions of Chrome or all Amazon pages.
                   </p>
                   <p>
                     We reserve the right to modify, suspend, or discontinue the Extension at any time with or without notice.
@@ -142,7 +142,7 @@ const TermsOfService = () => {
                 <h2 className="text-2xl font-bold mb-4">7. Limitation of Liability</h2>
                 <div className="space-y-4 text-muted-foreground">
                   <p>
-                    To the fullest extent permitted by law, AI Writer Pros and its affiliates shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, or business opportunities.
+                    To the fullest extent permitted by law, AMZ Extractor and its affiliates shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, or business opportunities.
                   </p>
                   <p>
                     Our total liability for any claims arising from or relating to the Extension shall not exceed the amount you paid for the Extension.
@@ -157,7 +157,7 @@ const TermsOfService = () => {
                 <h2 className="text-2xl font-bold mb-4">8. Disclaimer of Warranties</h2>
                 <div className="space-y-4 text-muted-foreground">
                   <p>
-                    AI Writer Pros is provided "AS IS" and "AS AVAILABLE" without warranties of any kind, either express or implied.
+                    AMZ Extractor is provided "AS IS" and "AS AVAILABLE" without warranties of any kind, either express or implied.
                   </p>
                   <p>We disclaim all warranties, including but not limited to:</p>
                   <ul className="list-disc list-inside space-y-1 ml-4">

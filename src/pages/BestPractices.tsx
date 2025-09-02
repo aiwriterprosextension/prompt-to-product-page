@@ -9,8 +9,8 @@ const BestPractices = () => {
   return (
     <>
       <Helmet>
-        <title>Best Practices - AI Writer Pros | Maximize Your Amazon Data Extraction</title>
-        <meta name="description" content="Learn best practices for AI Writer Pros Amazon extension. Optimize data extraction, improve content creation, and maximize your affiliate marketing results." />
+        <title>Best Practices - AMZ Extractor | Maximize Your Amazon Data Extraction</title>
+        <meta name="description" content="Learn best practices for AMZ Extractor Amazon extension. Optimize data extraction, improve content creation, and maximize your affiliate marketing results." />
         <meta name="keywords" content="Amazon data extraction best practices, affiliate marketing tips, product research strategies, content creation optimization, Amazon scraper tips" />
         <link rel="canonical" href="https://aiwriterpros.com/best-practices" />
       </Helmet>
@@ -31,7 +31,7 @@ const BestPractices = () => {
                   alt="AI Writer Pros" 
                   className="w-8 h-8 hidden dark:block"
                 />
-                <span className="text-xl font-bold gradient-text">AI Writer Pros</span>
+                <span className="text-xl font-bold gradient-text">AMZ Extractor</span>
               </Link>
               <Link to="/support" className="flex items-center text-muted-foreground hover:text-foreground">
                 <ArrowLeft className="w-4 h-4 mr-1" />
