@@ -17,6 +17,9 @@ import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import TermsOfService from "@/pages/TermsOfService";
 import RefundPolicy from "@/pages/RefundPolicy";
 import NotFound from "@/pages/NotFound";
+import Documentation from "@/pages/Documentation";
+import UserGuide from "@/pages/UserGuide";
+import BestPractices from "@/pages/BestPractices";
 
 function App() {
   return (
@@ -36,6 +39,9 @@ function App() {
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<TermsOfService />} />
             <Route path="/refund" element={<RefundPolicy />} />
+            <Route path="/documentation" element={<Documentation />} />
+            <Route path="/user-guide" element={<UserGuide />} />
+            <Route path="/best-practices" element={<BestPractices />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
