@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { CheckCircle, Zap, Download, Globe, Target, Users, FileText, ArrowRight } from 'lucide-react';
@@ -8,11 +9,14 @@ import DarkModeToggle from '@/components/DarkModeToggle';
 import CountdownTimer from '@/components/CountdownTimer';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import ExtensionPreview from '@/components/ExtensionPreview';
+import LeadMagnet from '@/components/LeadMagnet';
+import ExitIntentPopup from '@/components/ExitIntentPopup';
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary-light/10 to-background dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
       <SocialProofNotifications />
+      <ExitIntentPopup />
       
       {/* Navigation */}
       <nav className="bg-white dark:bg-gray-900 shadow-sm border-b border-border transition-colors duration-300">
@@ -74,6 +78,9 @@ const Index = () => {
           </p>
         </div>
       </section>
+
+      {/* Lead Magnet Section */}
+      <LeadMagnet />
 
       {/* Extension Preview */}
       <ExtensionPreview />
@@ -173,8 +180,8 @@ const Index = () => {
             <div className="text-center mb-6">
               <h3 className="text-2xl font-bold text-foreground mb-2">AMZ Extractor</h3>
               <div className="flex items-center justify-center gap-3 mb-2">
-                <span className="text-2xl text-muted-foreground line-through">$39</span>
-                <span className="text-5xl font-bold text-primary">$19</span>
+                <span className="text-2xl text-muted-foreground line-through">$54</span>
+                <span className="text-5xl font-bold text-primary">$27</span>
               </div>
               <p className="text-muted-foreground">Lifetime access</p>
             </div>

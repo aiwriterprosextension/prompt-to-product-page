@@ -13,8 +13,8 @@ const ExtensionPreview = () => {
           Watch how AMZ Extractor transforms your Amazon research workflow
         </p>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {/* Main Extension Screenshot */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          {/* Main Extension Screenshot - Now using uploaded image */}
           <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border dark:border-gray-700">
             <div className="mb-4">
               <div className="flex items-center justify-center">
@@ -22,14 +22,12 @@ const ExtensionPreview = () => {
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Extension Interface</h3>
               </div>
             </div>
-            <div className="aspect-video bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-700 dark:to-gray-600 rounded-lg flex items-center justify-center border-2 border-dashed border-gray-300 dark:border-gray-500">
-              <div className="text-center text-gray-500 dark:text-gray-400">
-                <Monitor className="w-16 h-16 mx-auto mb-2" />
-                <p className="font-medium">Extension Popup Screenshot</p>
-                <p className="text-sm mt-1">Recommended: 800x600px</p>
-                <p className="text-xs mt-1">Show: Extension popup with data fields</p>
-                <p className="text-xs">Alt: "AMZ Extractor browser extension interface"</p>
-              </div>
+            <div className="aspect-[3/4] rounded-lg overflow-hidden border border-gray-200 dark:border-gray-600">
+              <img 
+                src="/lovable-uploads/d7b07260-b42e-411c-9968-d72e28d05c2f.png" 
+                alt="AMZ Extractor browser extension interface"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
 
@@ -41,13 +39,12 @@ const ExtensionPreview = () => {
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Amazon Integration</h3>
               </div>
             </div>
-            <div className="aspect-video bg-gradient-to-br from-orange-50 to-amber-100 dark:from-gray-700 dark:to-gray-600 rounded-lg flex items-center justify-center border-2 border-dashed border-gray-300 dark:border-gray-500">
-              <div className="text-center text-gray-500 dark:text-gray-400">
-                <Monitor className="w-16 h-16 mx-auto mb-2" />
-                <p className="font-medium">Amazon Page with Extension</p>
-                <p className="text-sm mt-1">Recommended: 1200x800px</p>
+            <div className="aspect-[3/4] bg-gradient-to-br from-orange-50 to-amber-100 dark:from-gray-700 dark:to-gray-600 rounded-lg flex items-center justify-center border-2 border-dashed border-gray-300 dark:border-gray-500">
+              <div className="text-center text-gray-500 dark:text-gray-400 p-4">
+                <Monitor className="w-12 h-12 mx-auto mb-2" />
+                <p className="font-medium text-sm">Amazon Page with Extension</p>
+                <p className="text-xs mt-1">Portrait: 600x800px</p>
                 <p className="text-xs mt-1">Show: Amazon product page with extension active</p>
-                <p className="text-xs">Alt: "AMZ Extractor extracting data from Amazon product page"</p>
               </div>
             </div>
           </div>
@@ -57,13 +54,12 @@ const ExtensionPreview = () => {
             <div className="mb-4">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white text-center">Exported Data</h3>
             </div>
-            <div className="aspect-video bg-gradient-to-br from-green-50 to-emerald-100 dark:from-gray-700 dark:to-gray-600 rounded-lg flex items-center justify-center border-2 border-dashed border-gray-300 dark:border-gray-500">
-              <div className="text-center text-gray-500 dark:text-gray-400">
-                <Monitor className="w-16 h-16 mx-auto mb-2" />
-                <p className="font-medium">CSV/JSON Export View</p>
-                <p className="text-sm mt-1">Recommended: 1000x700px</p>
-                <p className="text-xs mt-1">Show: Spreadsheet or JSON with extracted data</p>
-                <p className="text-xs">Alt: "AMZ Extractor CSV export with Amazon product data"</p>
+            <div className="aspect-[3/4] bg-gradient-to-br from-green-50 to-emerald-100 dark:from-gray-700 dark:to-gray-600 rounded-lg flex items-center justify-center border-2 border-dashed border-gray-300 dark:border-gray-500">
+              <div className="text-center text-gray-500 dark:text-gray-400 p-4">
+                <Monitor className="w-12 h-12 mx-auto mb-2" />
+                <p className="font-medium text-sm">CSV/JSON Export View</p>
+                <p className="text-xs mt-1">Portrait: 600x800px</p>
+                <p className="text-xs mt-1">Show: Spreadsheet with extracted data</p>
               </div>
             </div>
           </div>
@@ -73,13 +69,12 @@ const ExtensionPreview = () => {
             <div className="mb-4">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white text-center">Bulk Extraction</h3>
             </div>
-            <div className="aspect-video bg-gradient-to-br from-purple-50 to-violet-100 dark:from-gray-700 dark:to-gray-600 rounded-lg flex items-center justify-center border-2 border-dashed border-gray-300 dark:border-gray-500">
-              <div className="text-center text-gray-500 dark:text-gray-400">
-                <Monitor className="w-16 h-16 mx-auto mb-2" />
-                <p className="font-medium">Bulk Extraction View</p>
-                <p className="text-sm mt-1">Recommended: 1200x800px</p>
+            <div className="aspect-[3/4] bg-gradient-to-br from-purple-50 to-violet-100 dark:from-gray-700 dark:to-gray-600 rounded-lg flex items-center justify-center border-2 border-dashed border-gray-300 dark:border-gray-500">
+              <div className="text-center text-gray-500 dark:text-gray-400 p-4">
+                <Monitor className="w-12 h-12 mx-auto mb-2" />
+                <p className="font-medium text-sm">Bulk Extraction View</p>
+                <p className="text-xs mt-1">Portrait: 600x800px</p>
                 <p className="text-xs mt-1">Show: Multiple products being processed</p>
-                <p className="text-xs">Alt: "AMZ Extractor bulk extracting multiple Amazon products"</p>
               </div>
             </div>
           </div>
@@ -96,7 +91,7 @@ const ExtensionPreview = () => {
                 <li>• Format: PNG or WebP for screenshots</li>
                 <li>• Compression: Optimize for web (under 200KB)</li>
                 <li>• Resolution: High-DPI ready (2x scaling)</li>
-                <li>• Aspect ratio: 16:9 or 4:3 for consistency</li>
+                <li>• Aspect ratio: 3:4 (portrait) for mobile-friendly display</li>
               </ul>
             </div>
             <div>

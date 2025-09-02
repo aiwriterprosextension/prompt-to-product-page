@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'sonner';
 import { HelmetProvider } from 'react-helmet-async';
 import { QueryClient } from './context/query-client';
+import GoogleAnalytics from './components/GoogleAnalytics';
 
 import Index from "@/pages/Index";
 import AmazonGenerator from "@/pages/AmazonGenerator";
@@ -20,11 +21,13 @@ import NotFound from "@/pages/NotFound";
 import Documentation from "@/pages/Documentation";
 import UserGuide from "@/pages/UserGuide";
 import BestPractices from "@/pages/BestPractices";
+import Sitemap from "@/pages/Sitemap";
 
 function App() {
   return (
     <HelmetProvider>
       <QueryClient>
+        <GoogleAnalytics measurementId="G-XXXXXXXXXX" />
         <Toaster />
         <BrowserRouter>
           <Routes>
@@ -42,6 +45,7 @@ function App() {
             <Route path="/documentation" element={<Documentation />} />
             <Route path="/user-guide" element={<UserGuide />} />
             <Route path="/best-practices" element={<BestPractices />} />
+            <Route path="/sitemap" element={<Sitemap />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
