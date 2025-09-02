@@ -15,7 +15,7 @@ const RefundPolicy = () => {
               <div className="w-8 h-8 bg-gradient-to-r from-primary to-primary-dark rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">AI</span>
               </div>
-              <span className="text-xl font-bold gradient-text">AI Writer Pros</span>
+              <span className="text-xl font-bold gradient-text">AMZ Extractor</span>
             </Link>
             <Link to="/" className="flex items-center text-muted-foreground hover:text-foreground">
               <ArrowLeft className="w-4 h-4 mr-1" />
@@ -52,7 +52,7 @@ const RefundPolicy = () => {
                 </div>
                 <div className="space-y-4 text-muted-foreground">
                   <p className="text-lg">
-                    We stand behind AI Writer Pros with a complete 30-day money-back guarantee. If for any reason you're not satisfied with your purchase, we'll refund your money—no questions asked.
+                    We stand behind AMZ Extractor with a complete 30-day money-back guarantee. If for any reason you're not satisfied with your purchase, we'll refund your money—no questions asked.
                   </p>
                   
                   <div className="bg-primary/10 border border-primary/20 rounded-lg p-6">
@@ -60,7 +60,7 @@ const RefundPolicy = () => {
                     <ul className="space-y-2">
                       <li className="flex items-start">
                         <CheckCircle className="w-5 h-5 text-success mr-2 mt-0.5 flex-shrink-0" />
-                        <span>Try AI Writer Pros risk-free for 30 full days</span>
+                        <span>Try AMZ Extractor risk-free for 30 full days</span>
                       </li>
                       <li className="flex items-start">
                         <CheckCircle className="w-5 h-5 text-success mr-2 mt-0.5 flex-shrink-0" />
@@ -242,7 +242,7 @@ const RefundPolicy = () => {
                   
                   <p className="mt-6 text-center">
                     <strong className="text-foreground">We're committed to your satisfaction.</strong><br />
-                    Your success with AI Writer Pros is our top priority.
+                    Your success with AMZ Extractor is our top priority.
                   </p>
                 </div>
               </section>

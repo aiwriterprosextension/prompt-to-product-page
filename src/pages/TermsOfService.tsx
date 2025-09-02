@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React fr                <span className="text-xl font-bold gradient-text">AMZ Extractor</span>m 'react';
 import { ArrowLeft, FileText, Scale, AlertTriangle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 

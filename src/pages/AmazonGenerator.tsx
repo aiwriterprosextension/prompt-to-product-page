@@ -77,7 +77,7 @@ const AmazonGenerator = () => {
             },
             "creator": {
               "@type": "Organization",
-              "name": "AI Writer Pros"
+              "name": "AMZ Extractor"
             }
           })}
         </script>
