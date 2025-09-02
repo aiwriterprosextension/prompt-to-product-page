@@ -35,7 +35,7 @@ const Contact = () => {
               <div className="w-8 h-8 bg-gradient-to-r from-primary to-primary-dark rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">AI</span>
               </div>
-              <span className="text-xl font-bold gradient-text">AI Writer Pros</span>
+              <span className="text-xl font-bold gradient-text">AMZ Extractor</span>
             </Link>
             <Link to="/" className="flex items-center text-muted-foreground hover:text-foreground">
               <ArrowLeft className="w-4 h-4 mr-1" />
@@ -54,7 +54,7 @@ const Contact = () => {
                 Get in <span className="gradient-text">Touch</span>
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
-                We're here to help you succeed with AI Writer Pros
+                We're here to help you succeed with AMZ Extractor
               </p>
             </div>
 
