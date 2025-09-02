@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { CheckCircle, Zap, Download, Globe, Target, Users, FileText, ArrowRight } from 'lucide-react';
@@ -19,10 +18,17 @@ const Index = () => {
       <nav className="bg-white dark:bg-gray-900 shadow-sm border-b border-border transition-colors duration-300">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-3">
+            {/* Light mode logo */}
             <img 
               src="/lovable-uploads/21e93c14-f110-46be-9a78-e5ddc580d29f.png" 
               alt="AMZ Extractor Logo" 
-              className="h-8 w-auto"
+              className="h-8 w-auto dark:hidden"
+            />
+            {/* Dark mode logo */}
+            <img 
+              src="/lovable-uploads/3a71676f-ab4f-464b-9ccf-41cecd50b2b0.png" 
+              alt="AMZ Extractor Logo" 
+              className="h-8 w-auto hidden dark:block"
             />
             <span className="text-lg font-semibold text-foreground">AMZ Extractor</span>
           </Link>
