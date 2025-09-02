@@ -1,14 +1,60 @@
-
 import React, { useEffect, useState } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { Check, Download, Mail, ArrowRight, Shield, Clock, Chrome, Monitor } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { supabase } from '@/integrations/supabase/client';
+import { toast } from 'sonner';
 import DarkModeToggle from '@/components/DarkModeToggle';
 
 const Success = () => {
   const [searchParams] = useSearchParams();
   const sessionId = searchParams.get('session_id');
+  const [downloadToken, setDownloadToken] = useState<string | null>(null);
+  const [downloading, setDownloading] = useState(false);
+
+  useEffect(() => {
+    // In a real implementation, you would verify the session and get the download token
+    // For now, we'll simulate this with a placeholder token
+    if (sessionId) {
+      setDownloadToken('sample-download-token-' + sessionId);
+    }
+  }, [sessionId]);
+
+  const handleOpenEmail = () => {
+    // Try to open the default email client
+    window.location.href = 'mailto:';
+  };
+
+  const handleDownload = async () => {
+    if (!downloadToken) {
+      toast.error('Download token not available. Please check your email for the download link.');
+      return;
+    }
+
+    setDownloading(true);
+    
+    try {
+      // Create a download link to the file
+      const downloadUrl = `/downloads/amz-extractor-v1.0.zip`;
+      
+      // Create a temporary download link
+      const link = document.createElement('a');
+      link.href = downloadUrl;
+      link.download = 'amz-extractor-v1.0.zip';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      toast.success('Download started! Check your downloads folder.');
+      
+    } catch (error) {
+      console.error('Download error:', error);
+      toast.error('Download failed. Please contact support.');
+    } finally {
+      setDownloading(false);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary-light/10 to-background dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
@@ -16,10 +62,17 @@ const Success = () => {
       <header className="bg-white dark:bg-gray-900 shadow-sm border-b border-border">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-3">
+            {/* Light mode logo */}
             <img 
               src="/lovable-uploads/21e93c14-f110-46be-9a78-e5ddc580d29f.png" 
               alt="AMZ Extractor Logo" 
-              className="h-8 w-auto"
+              className="h-8 w-auto dark:hidden"
+            />
+            {/* Dark mode logo */}
+            <img 
+              src="/lovable-uploads/3a71676f-ab4f-464b-9ccf-41cecd50b2b0.png" 
+              alt="AMZ Extractor Logo" 
+              className="h-8 w-auto hidden dark:block"
             />
             <span className="text-lg font-semibold text-foreground">AMZ Extractor</span>
           </Link>
@@ -70,7 +123,7 @@ const Success = () => {
                 </div>
                 <div>
                   <span className="text-muted-foreground">Amount:</span>
-                  <p className="font-medium text-foreground">$19.00 (One-time)</p>
+                  <p className="font-medium text-foreground">$27.00 (One-time)</p>
                 </div>
                 <div>
                   <span className="text-muted-foreground">Session ID:</span>
@@ -142,7 +195,7 @@ const Success = () => {
                 <Mail className="w-8 h-8 text-primary mx-auto mb-4" />
                 <h3 className="font-semibold mb-2 text-foreground">Check Your Email</h3>
                 <p className="text-muted-foreground text-sm mb-4">Download instructions sent to your inbox</p>
-                <Button variant="outline" size="sm" className="w-full">
+                <Button variant="outline" size="sm" className="w-full" onClick={handleOpenEmail}>
                   Open Email App
                 </Button>
               </CardContent>
@@ -153,8 +206,20 @@ const Success = () => {
                 <Download className="w-8 h-8 text-primary mx-auto mb-4" />
                 <h3 className="font-semibold mb-2 text-foreground">Download Now</h3>
                 <p className="text-muted-foreground text-sm mb-4">Get AMZ Extractor for Chrome & Edge</p>
-                <Button className="w-full bg-primary hover:bg-primary-dark text-primary-foreground" size="sm">
-                  Download AMZ Extractor
+                <Button 
+                  className="w-full bg-primary hover:bg-primary-dark text-primary-foreground" 
+                  size="sm"
+                  onClick={handleDownload}
+                  disabled={downloading}
+                >
+                  {downloading ? (
+                    <>
+                      <div className="w-4 h-4 border-2 border-primary-foreground border-t-transparent rounded-full animate-spin mr-2" />
+                      Downloading...
+                    </>
+                  ) : (
+                    'Download AMZ Extractor'
+                  )}
                 </Button>
               </CardContent>
             </Card>
